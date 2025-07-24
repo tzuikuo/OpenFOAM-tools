@@ -1,0 +1,204 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      createPatchDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+pointSync false;
+
+patches
+(
+    {
+        name interface-18;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-18);
+    }
+    {
+        name interface-4;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-4);
+    }
+    {
+        name interface-17;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-17);
+    }
+    {
+        name interface-13;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-13);
+    }
+    {
+        name interface-7;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-7);
+    }
+    {
+        name interface-3;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-3);
+    }
+    {
+        name interface-12;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-12);
+    }
+    {
+        name interface-16;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-16);
+    }
+    {
+        name interface-15;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-15);
+    }
+    {
+        name interface-2;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-2);
+    }
+    {
+        name interface-6;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-6);
+    }
+    {
+        name interface-1;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-1);
+    }
+    {
+        name interface-11;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-11);
+    }
+    {
+        name interface-20;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-20);
+    }
+    {
+        name interface-10;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-10);
+    }
+    {
+        name interface-19;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-19);
+    }
+    {
+        name interface-9;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-9);
+    }
+    {
+        name interface-5;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-5);
+    }
+    {
+        name interface-14;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-14);
+    }
+    {
+        name interface-8;
+        patchInfo
+        {
+            type empty;
+        }
+        constructFrom patches;
+        patches (gridwall-8);
+    }
+);
+
+
+// ************************************************************************* //

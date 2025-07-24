@@ -1,0 +1,39 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+    // First create a faceSet from the patch
+    {
+        name    patchFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        patch   wall-geom-2-cylinder2111-geom-2-fluidlarge;
+    }
+
+    // Then create the faceZone from the faceSet
+    {
+        name    testFaces;
+        type    faceZoneSet;
+        action  new;
+        source  setToFaceZone;
+        faceSet patchFaces;
+    }
+);
+
+// ************************************************************************* //

@@ -1,0 +1,49 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      createPatchDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+pointSync false;
+
+patches
+(
+    // 主面（master）
+    {
+        name    t1;      // 主面名称
+        patchInfo
+        {
+            type            cyclic; // 边界类型
+            neighbourPatch  t2; // 配对从面名称
+        }
+        matchTolerance  1e-3;  
+        constructFrom set;        // 从set构造
+        set testFaces;         // 使用之前定义的faceSet
+    }
+
+    // 从面（slave）
+    {
+        name    t2;      // 从面名称
+        patchInfo
+        {
+            type            cyclic;
+            neighbourPatch  t1;
+        }
+        matchTolerance  1e-3;  
+        constructFrom set;
+        set testFaces;         // 同一组faceSet（自动配对）
+    }
+);
+
+
+// ************************************************************************* //

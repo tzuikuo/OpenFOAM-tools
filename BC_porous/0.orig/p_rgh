@@ -1,0 +1,50 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p_rgh;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    gridWall_large
+    {
+        type            porousBafflePressure;
+        patchType       cyclic;
+        neighbourPatch  gridWall_small;
+        D               1000;
+        I               500;
+        length          0.01;
+        uniformJump     true;
+        jump            uniform 0;
+        value           uniform 0;
+    }
+    gridWall_small
+    {
+        type            porousBafflePressure;
+        patchType       cyclic;
+        neighbourPatch  gridWall_large;
+        D               1000;
+        I               500;
+        length          0.01;
+        uniformJump     true;
+        jump            uniform 0;
+        value           uniform 0;
+    }
+
+}
+
+// ************************************************************************* //
